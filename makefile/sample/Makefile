@@ -13,7 +13,10 @@ define test1_rules
 @echo exec rules!!
 endef
 $(eval $(call func1))
-targets=$(eval $(call func2))
+val1=xxx
+ifneq ($(strip $(val1)),)
+  $(info val1 is not empty!!)
+endif
 %:
 	@echo $@
 all: $(call func2)
